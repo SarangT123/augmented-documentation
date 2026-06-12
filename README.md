@@ -108,20 +108,28 @@ Process one frame. Returns `[stacked_frame, augmented_frame]`.
 
 Process one frame. Returns the augmented frame.
 
-## Local Development
+## Docs Site
+
+This repo also hosts a static documentation site on GitHub Pages.
+
+### Structure
+
+- `build.py` — Generates `website/static/index.html` by scanning the docs directories
+- `website/static/` — Static site content (deployed to Pages)
+- `.github/workflows/deploy.yml` — GitHub Actions workflow for automated deployment
+
+### Local development
 
 ```bash
-git clone https://github.com/SarangT123/augmented-documentation.git
-cd augmented-documentation
-python build.py                    # generate static docs site
+python build.py
 python -m http.server 8000 -d website/static
 ```
 
-## Deployment
+### Deployment
 
-The static documentation site is automatically built and deployed to GitHub Pages via a GitHub Actions workflow. Push to `master` to trigger deployment.
+Push to `master` — the GitHub Actions workflow automatically builds and deploys to Pages.
 
-Live site: [sarangt123.github.io/augmented-documentation](https://sarangt123.github.io/augmented-documentation/)
+To enable: go to repo **Settings → Pages → Source: GitHub Actions**.
 
 ## License
 
